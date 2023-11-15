@@ -1,7 +1,3 @@
-[client-server]
-!includedir /etc/mysql/conf.f/
-!includedir /etc/mysql/mariadb.conf.d/
-
 [mysqld]
 datadir = /var/lib/mysql
 socket = /run/mysqld.sock
