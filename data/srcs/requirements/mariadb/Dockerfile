@@ -11,7 +11,7 @@ RUN	apt install curl -y
 COPY	conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
 
 COPY	conf/my_conf.sh /my_config.sh
-#execute bash scritp 
-ENTRYPOINT	["bash", "my_conf.sh"]
+#execute bash scritp
+ENTRYPOINT	["bash", "my_config.sh"]
 
 EXPOSE	3306
