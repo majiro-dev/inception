@@ -28,4 +28,4 @@ if [ ! -d /run/php ]; then
 	mkdir ./run/php
 fi
 
-/usr/sbin/php-fmp7.3 -F
+/usr/sbin/php-fpm7.3 -F
