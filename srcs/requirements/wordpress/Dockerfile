@@ -14,7 +14,15 @@ RUN	apt-get install -y php7.3\
 RUN	wget https://wordpress.org/wordpress-6.0.tar.gz -P /var/www
 RUN	cd var/www && tar -xzf wordpress-6.0.tar.gz  && rm wordpress-6.0.tar.gz
 
+COPY	./conf/php.conf /etc/php/7.3/fpm/pool.d/www.conf
+
 RUN	chown -R root:root /var/www/wordpress
 
-#COPY	
+RUN	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
+RUN	chmod +x wp-cli.phar
+RUN	mv wp-cli.phar /usr/local/bin/wp
+
+COPY 	conf/my_conf.sh my_conf.sh
+
+ENTRYPOINT ["bash", "my_conf.sh"]
