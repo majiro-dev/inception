@@ -11,7 +11,7 @@ if [ ! -e /var/www/wordpress/wp-config.php ]; then
 sleep 2
 
 wp core install		--url=$DOMAIN_NAME \
-			--titlee=$SITE_TITLE \
+			--title=$SITE_TITLE \
 			--admin_user=$ADMIN_USER \
 			--admin_password=$ADMIN_PASSWORD \
 			--admin_email=$ADMIN_EMAIL \
