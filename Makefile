@@ -21,4 +21,8 @@ fclean:
 	sudo docker system prune -af --volumes
 	docker volume rm srcs_mariadb-data srcs_wordpress-data
 
-.PHONY: all vol clean fclean
+re:
+	$(MAKE) fclean
+	$(MAKE) all
+
+.PHONY: all vol clean fclean re

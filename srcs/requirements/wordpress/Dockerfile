@@ -7,14 +7,15 @@ RUN	apt install vim -y
 
 RUN	apt-get install wget -y
 RUN	apt-get install -y php7.3\
-	php-fpm\
-	php-mysql\
+	php7.3-fpm\
+	php7.3-mysql\
+	php7.3-phar\
 	mariadb-client
 
 RUN	wget https://wordpress.org/wordpress-6.0.tar.gz -P /var/www
 RUN	cd /var/www && tar -xzf wordpress-6.0.tar.gz  && rm wordpress-6.0.tar.gz
 
-COPY	./conf/php.conf /etc/php/7.3/fpm/pool.d/www.conf
+COPY	./conf/php.conf		/etc/php/7.3/fpm/pool.d/www.conf
 
 RUN	chown -R root:root /var/www/wordpress
 
