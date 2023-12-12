@@ -35,4 +35,7 @@ re:
 logs:
 	sudo docker compose -f ./srcs/docker-compose.yml logs
 
-.PHONY: all vol clean fclean re logs volrm
+reset:
+	sudo docker-compose -f ./srcs/docker-compose.yml down
+	sudo docker-compose -f ./srcs/docker-compose.yml up -d
+.PHONY: all vol clean fclean re logs volrm reset
