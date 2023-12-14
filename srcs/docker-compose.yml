@@ -4,21 +4,23 @@ services:
   mariadb:
     image: mariadb
     container_name: mariadb
+    hostname: mariadb
     networks:
       - inception
     volumes:
     - mariadb:/var/lib/mariadb
     build:
-      context: requirements/mariadb
+      context: ./requirements/mariadb
       dockerfile: Dockerfile
     env_file: .env
-    restart: unless-stopped
+    restart: always
     expose:
       - "3306"
 
 
   nginx:
     image: nginx
+    hostname: nginx
     container_name: nginx
     networks:
       - inception
@@ -27,28 +29,29 @@ services:
     depends_on:
       - wordpress
     build:
-      context: requirements/nginx
+      context: ./requirements/nginx
       dockerfile: Dockerfile
     env_file: .env
     ports:
       - "443:443"
-    restart: on-failure
+    restart: always
 
 
   wordpress:
     image: wordpress
     container_name: wordpress
+    hostname: wordpress
     env_file: .env
     volumes:
       - wordpress:/var/www/wordpress
     networks:
     - inception
     build:
-      context: requirements/wordpress
+      context: ./requirements/wordpress
       dockerfile: Dockerfile
     depends_on:
       - mariadb
-    restart: on-failure
+    restart: always
     expose:
       - "9000"
 

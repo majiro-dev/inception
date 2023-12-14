@@ -1,9 +1,9 @@
-FROM	debian:buster
+FROM	debian:buster-slim
 
-RUN	apt update -y
-RUN	apt upgrade -y
+RUN	apt-get update -y
+RUN	apt-get upgrade -y
 
-RUN	apt install vim -y
+#RUN	apt-get install vim -y
 
 RUN	apt-get install wget -y
 RUN	apt-get install -y php7.3\
