@@ -1,7 +1,7 @@
 <?php
-define('DB_NAME', getenv('WORDPRESS_DB_NAME'));
-define('DB_USER', getenv('WORDPRESS_DB_USER'));
-define('DB_PASSWORD', getenv('WORDPRESS_DB_PASSWORD'));
+define('DB_NAME', getenv('SQL_DATABASE'));
+define('DB_USER', getenv('SQL_USER'));
+define('DB_PASSWORD', getenv('SQL_PASSWORD'));
 define('DB_HOST', 'mariadb');
 ?>
 
