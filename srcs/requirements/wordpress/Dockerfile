@@ -24,10 +24,14 @@ RUN	chown -R root:root /var/www/wordpress
 RUN	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
 RUN	chmod +x wp-cli.phar
-RUN	mv wp-cli.phar /usr/local/bin/wp
+RUN	mv wp-cli.phar /usr/local/bin/wp-cli.phar
 
-COPY	conf/wp-config.php /var/www/wordpress/wp-config.php
+#COPY	conf/wp-config.php /var/www/wordpress/wp-config.php
 
 COPY 	conf/my_conf.sh my_conf.sh
+
+RUN	wp --info || echo "WP-CLI not working" >> log.txt 2>&1
+RUN	which wp || echo "WP command not found" >> log.txt 2>&1
+RUN	php -v !! echo "PHP not working" >> log.txt 2>&1
 
 ENTRYPOINT ["bash", "my_conf.sh"]
