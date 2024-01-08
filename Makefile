@@ -36,11 +36,11 @@ logs:
 	sudo docker compose -f ./srcs/docker-compose.yml logs
 
 reset:
-	sudo docker-compose -f ./srcs/docker-compose.yml down
-	sudo docker-compose -f ./srcs/docker-compose.yml up -d
+	sudo docker compose -f ./srcs/docker-compose.yml down
+	sudo docker compose -f ./srcs/docker-compose.yml up -d
 up:
-	sudo docker-compose -f ./srcs/docker-compose.yml up -d
+	sudo docker compose -f ./srcs/docker-compose.yml up -d
 
 stop:
-	sudo docker-compose -f ./srcs/docker-compose.yml stop
+	sudo docker compose -f ./srcs/docker-compose.yml stop
 .PHONY: all vol clean fclean re logs volrm reset stop up
