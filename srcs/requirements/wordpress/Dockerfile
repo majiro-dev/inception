@@ -2,9 +2,6 @@ FROM	debian:buster-slim
 
 RUN	apt-get update -y
 RUN	apt-get upgrade -y
-
-#RUN	apt-get install vim -y
-
 RUN	apt-get install wget -y
 RUN	apt-get install -y php7.3\
 	php7.3-fpm\
@@ -25,8 +22,6 @@ RUN	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.ph
 
 RUN	chmod +x wp-cli.phar
 RUN	mv wp-cli.phar /usr/local/bin/wp-cli.phar
-
-#COPY	conf/wp-config.php /var/www/wordpress/wp-config.php
 
 COPY 	conf/my_conf.sh my_conf.sh
 
