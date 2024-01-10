@@ -13,7 +13,7 @@ if [ ! -e /var/www/wordpress/wp-config.php ]; then
 	    --dbhost=mariadb:3306 --path='/var/www/wordpress'
 
 sleep 2
-#echo "CORE INSTALL STARTING"
+
 wp-cli.phar core install    \
    	--allow-root \
    	--url=$DOMAIN_NAME \
@@ -22,7 +22,7 @@ wp-cli.phar core install    \
    	--admin_password=$ADMIN_PASSWORD \
    	--admin_email=$ADMIN_EMAIL \
    	--path='/var/www/wordpress' >> /log.txt 2>&1
-#echo "USER CREATION STARTING"
+    
 wp-cli.phar user create  \
 	--allow-root \
 	--role=author $USER1_LOGIN $USER1_MAIL \
@@ -30,8 +30,6 @@ wp-cli.phar user create  \
 	--path='/var/www/wordpress' >> /log.txt 2>&1
 fi
 
-
-# if /run/php folder does not exist, create it
 if [ ! -d /run/php ]; then
     mkdir ./run/php
 fi
