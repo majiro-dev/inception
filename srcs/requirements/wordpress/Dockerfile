@@ -25,8 +25,4 @@ RUN	mv wp-cli.phar /usr/local/bin/wp-cli.phar
 
 COPY 	conf/my_conf.sh my_conf.sh
 
-RUN	wp --info || echo "WP-CLI not working" >> log.txt 2>&1
-RUN	which wp || echo "WP command not found" >> log.txt 2>&1
-RUN	php -v !! echo "PHP not working" >> log.txt 2>&1
-
 ENTRYPOINT ["bash", "my_conf.sh"]
