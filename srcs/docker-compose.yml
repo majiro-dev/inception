@@ -1,4 +1,4 @@
-version: '3'
+# version: '3'
 
 services:
   mariadb:
@@ -16,7 +16,6 @@ services:
     restart: always
     expose:
       - "3306"
-
 
   nginx:
     image: nginx
@@ -36,7 +35,6 @@ services:
       - "443:443"
     restart: always
 
-
   wordpress:
     image: wordpress
     container_name: wordpress
@@ -55,21 +53,19 @@ services:
     expose:
       - "9000"
 
-
 volumes:
   wordpress:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/manujime/data/wordpress'
+      device: '../data/wordpress'
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/home/manujime/data/mariadb'
-
+      device: '../data/mariadb'
 
 networks:
   inception:

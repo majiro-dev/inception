@@ -1,6 +1,5 @@
-
-MV_PATH= mariadb
-WV_PATH= wordpress
+MV_PATH= './data/wordpress'
+WV_PATH= './data/mariadb'
 
 all:
 	$(MAKE) vol
