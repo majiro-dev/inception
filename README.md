@@ -15,19 +15,16 @@ This project sets up a WordPress site with a MariaDB database using Docker and D
     - `mariadb/`: MariaDB service configuration.
     - `nginx/`: Nginx service configuration.
     - `wordpress/`: WordPress service configuration.
-- `.env`: Environment variables for the services.
 - `.env.example`: Example environment variables file.
 
 ### Setup
 
-1. Clone the repository
-
-2. Copy the example environment file and update it with your own values:
+1. Copy the example environment file and update it with your own values:
      ```sh
      cp .env.example .env
      ```
 
-3. Build and start the services:
+2. Build and start the services:
      ```sh
      sudo make all
      ```
