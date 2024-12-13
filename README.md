@@ -1,6 +1,6 @@
 ## Inception
 
-This project sets up a WordPress site with a MariaDB database using Docker and Docker Compose. It includes configurations for Nginx, PHP, and SSL.
+This project sets up a WordPress site with a MariaDB database using Docker and Docker Compose.
 
 ### Prerequisites
 
